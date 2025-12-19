@@ -28,6 +28,7 @@ import com.example.week12.modeldata.DetailSiswa
 import com.example.week12.modeldata.UIStateSiswa
 import com.example.week12.uicontroller.route.DestinasiEntry
 import com.example.week12.viewmodel.EntryViewModel
+import com.example.week12.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -1,6 +1,7 @@
 package com.example.week12.repositori
 
 import android.app.Application
+import com.example.week12.apiservice.ServiceApiSiswa
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -13,7 +14,7 @@ interface ContainerApp{
 }
 
 class DefaultContainerApp : ContainerApp{
-    private val baseurl = "http://localhost/umyTI/"
+    private val baseurl = "http://10.0.2.2/umyTI/"
 
     val logging = HttpLoggingInterceptor().apply {
         level= HttpLoggingInterceptor.Level.BODY
