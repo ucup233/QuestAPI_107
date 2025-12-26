@@ -42,7 +42,7 @@ class DefaultContainerApp : ContainerApp{
     }
 
     override val repositoryDataSiswa: RepositoryDataSiswa by lazy {
-        JaringanRepositoryDataSiswa(retrofitService) }
+        jaringanRepositoryDataSiswa(retrofitService) }
 }
 
 class AplikasiDataSiswa : Application() {

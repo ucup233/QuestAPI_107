@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import com.example.week12.uicontroller.route.DestinasiEdit
 
 
+
 class EditViewModel(savedStateHandle: SavedStateHandle, private val repositoryDataSiswa:
 RepositoryDataSiswa
 ): ViewModel() {
@@ -41,8 +42,7 @@ RepositoryDataSiswa
     }
     suspend fun editSatuSiswa(){
         if (validasiInput(uiStateSiswa.detailSiswa)){
-            val call: Response<Void> = repositoryDataSiswa.editSatuSiswa(idSiswa, uiStateSiswa
-                .detailSiswa.toDataSiswa())
+            val call: Response<Void> = repositoryDataSiswa.editSatuSiswa(idSiswa, uiStateSiswa.detailSiswa.toDataSiswa())
 
             if (call.isSuccessful){
                 println("Update Sukses : ${call.message()}")
