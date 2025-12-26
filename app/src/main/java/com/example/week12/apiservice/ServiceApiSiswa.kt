@@ -4,6 +4,7 @@ import com.example.week12.modeldata.DataSiswa
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 
 interface ServiceApiSiswa {
@@ -13,8 +14,8 @@ interface ServiceApiSiswa {
     @POST("insertTM.php")
     suspend fun postSiswa(@Body dataSiswa: DataSiswa):retrofit2.Response<Void>
 
-    //@GET("baca1eman.php")
-    //suspend fun getSatuSiswa(@Query("id") id: Int): DataSiswa
+    @GET("baca1eman.php")
+    suspend fun getSatuSiswa(@Query("id") id: Int): DataSiswa
 
     //@PUT("editTM.php/{id}")
     //suspend fun editSatuSiswa(@Query("id") id: Int, @Body dataSiswa: DataSiswa):retrofit2.Response<Void>
