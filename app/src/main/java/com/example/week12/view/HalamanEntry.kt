@@ -1,5 +1,6 @@
 package com.example.week12.view
 
+import EntryViewModel
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +28,6 @@ import com.example.week12.R
 import com.example.week12.modeldata.DetailSiswa
 import com.example.week12.modeldata.UIStateSiswa
 import com.example.week12.uicontroller.route.DestinasiEntry
-import com.example.week12.viewmodel.EntryViewModel
 import com.example.week12.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch
 
@@ -52,7 +52,6 @@ fun EntrySiswaScreen(
             )
         }
     ) { innerPadding ->
-
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
             onSiswaValueChange = viewModel::updateUiState,
@@ -78,12 +77,8 @@ fun EntrySiswaBody(
     modifier: Modifier = Modifier
 ) {
     Column(
-        verticalArrangement = Arrangement.spacedBy(
-            dimensionResource(id = R.dimen.padding_large)
-        ),
-        modifier = modifier.padding(
-            dimensionResource(id = R.dimen.padding_medium)
-        )
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large)),
+        modifier = modifier.padding(dimensionResource(id = R.dimen.padding_medium))
     ) {
         FormTambahSiswa(
             detailSiswa = uiStateSiswa.detailSiswa,
@@ -101,8 +96,6 @@ fun EntrySiswaBody(
     }
 }
 
-
-
 @Composable
 fun FormTambahSiswa(
     detailSiswa: DetailSiswa,
@@ -112,9 +105,7 @@ fun FormTambahSiswa(
 ) {
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.spacedBy(
-            dimensionResource(id = R.dimen.padding_medium)
-        )
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
     ) {
         OutlinedTextField(
             value = detailSiswa.nama,
@@ -124,7 +115,6 @@ fun FormTambahSiswa(
             enabled = enabled,
             singleLine = true
         )
-
         OutlinedTextField(
             value = detailSiswa.alamat,
             onValueChange = { onValueChange(detailSiswa.copy(alamat = it)) },
@@ -133,7 +123,6 @@ fun FormTambahSiswa(
             enabled = enabled,
             singleLine = true
         )
-
         OutlinedTextField(
             value = detailSiswa.telpon,
             onValueChange = { onValueChange(detailSiswa.copy(telpon = it)) },
@@ -152,11 +141,10 @@ fun FormTambahSiswa(
                 )
             )
         }
-
         Divider(
             thickness = dimensionResource(R.dimen.padding_small),
             modifier = Modifier.padding(
-                bottom = dimensionResource(id = R.dimen.padding_medium)
+                bottom = dimensionResource(R.dimen.padding_medium)
             )
         )
     }
